@@ -15,9 +15,19 @@
 
 ## TypeScript Overview 
 
-- TypeScript checks code before it runs.
-- It finds bugs using **types**.
-- TypeScript is used during **development**.
-- Final code becomes **normal JavaScript**.
-- Main value: **catch mistakes early and write safer JS.**
+- TypeScript is JavaScript with a type system.
+- **TypeScript does static checking**, meaning it finds errors **before the code runs**.
+- TypeScript checks code based on **types**:
+  - string
+  - number
+  - array
+  - object properties
+- TypeScript is mainly for development. Final code gets **compiled into normal JavaScript**.
+- TypeScript-only code like `interface`, `type`, etc. is **removed after compilation**.
+- Main benefit: **catch bugs early**, like typos in object properties:
+  - `shape.heigth` ❌
+  - TypeScript warns: “Did you mean `height`?”
+- Core idea: **TypeScript helps you write safer JavaScript.**
+
+
 

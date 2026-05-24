@@ -1,11 +1,11 @@
-// A Type alias 
-type Person ={
-    name:string ;
-    age:number
-}
+//using brackets
+//string array
+let names :string[]=["hello","world"]
+//number array
+let ages :number[]= [24,32,19,29]
 
-const sayHappyBirthday =(person:Person)=>{
-    return `Hey ${person.name} congrats on turning ${person.age}!`
-}
-
-sayHappyBirthday({name:"Jerry",age:42})
+//An alternate syntax
+//string array
+let names2:Array<string>=["hello", "world"]
+//number array
+let ages2 :Array<number> =[24,32,19,29]

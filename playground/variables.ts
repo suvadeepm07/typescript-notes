@@ -1,6 +1,11 @@
-// A function with an object type parameter 
-const printName =(name:{first:string;last:string})=>{
-    return `Name : ${name.first}${name.last}`
+// A Type alias 
+type Person ={
+    name:string ;
+    age:number
 }
 
-printName({first:"Will",last:"Ferrell"})
+const sayHappyBirthday =(person:Person)=>{
+    return `Hey ${person.name} congrats on turning ${person.age}!`
+}
+
+sayHappyBirthday({name:"Jerry",age:42})

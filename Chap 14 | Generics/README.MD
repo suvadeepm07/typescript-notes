@@ -39,6 +39,25 @@
     name: "Blue",
     breed: "Siamese"
   });
+  
+  //Example 2 
+  function getRandomElement<T>(list: T[]): T {
+    const randIdx = Math.floor(Math.random() * list.length);
+    return list[randIdx];
+  }
+  
+  const color = getRandomElement<string>(["red", "blue", "green"]);
+  const num = getRandomElement<number>([1, 2, 3]);
+  
+  interface Cat {
+    name: string;
+    breed: string;
+  }
+  
+  const cat = getRandomElement<Cat>([
+    { name: "Blue", breed: "Siamese" },
+    { name: "Kitty", breed: "Persian" }
+  ]);
   ```
-
+  
   

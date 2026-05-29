@@ -158,3 +158,73 @@
 
   - `#score` is private.
   - `get score()` exposes it safely as a readable property.
+
+## Setters 
+
+- A setter lets us control how a property is updated.
+
+  ```js
+  class Player {
+    #score = 0;
+  
+    get score() {
+      return this.#score;
+    }
+  
+    set score(newScore) {
+      if (newScore < 0) {
+        throw new Error("Score must be positive");
+      }
+  
+      this.#score = newScore;
+    }
+  }
+  
+  const player1 = new Player();
+  
+  player1.score = 324; // ok
+  player1.score = -10; // error
+  ```
+
+## Static Property & Methods 
+
+- `static` means the property or method belongs to the **class itself**, not individual instances.
+
+  ```js
+  class Player {
+    static description = "Player In Our Game";
+  }
+  
+  const player1 = new Player()
+  Player.description;  // ok
+  player1.description; // undefined / not available
+  ```
+
+## Extending Classes 
+
+- `extends` lets one class inherit from another class.
+
+## Super()
+
+- `super()` calls the constructor of the parent class.
+
+- If a child class has its own constructor, it must call `super()` before using `this`.
+
+  ```js
+  class Player {
+    constructor(first, last) {
+      this.first = first;
+      this.last = last;
+    }
+  }
+  
+  class AdminPlayer extends Player {
+    constructor(first, last, powers) {
+      super(first, last); // calls Player constructor
+      this.powers = powers;
+    }
+  }
+  ```
+
+  
+

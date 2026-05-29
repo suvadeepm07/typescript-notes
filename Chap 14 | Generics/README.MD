@@ -60,4 +60,44 @@
   ]);
   ```
   
+
+## Inferred Generic Type Parameters 
+
+- TypeScript can often infer the generic type automatically.
+
+  ```ts
+  function getRandomElement<T>(list: T[]): T {
+    const randIdx = Math.floor(Math.random() * list.length);
+    return list[randIdx];
+  }
   
+  const color = getRandomElement(["red", "blue", "green"]);
+  // TypeScript infers string
+  
+  const num = getRandomElement([1, 2, 3]);
+  // TypeScript infers number
+  ```
+
+## Generic Functions With Multiple Types 
+
+- A generic function can use more than one type parameter
+
+- ```ts
+  function merge<T, U>(object1: T, object2: U) {
+    return {
+      ...object1,
+      ...object2
+    };
+  }
+  
+  // `T` represents the first argument type.
+  // `U` represents the second argument type.
+  
+  const comboObject = merge(
+    { name: "Colt" },
+    { pets: ["Blue", "Elton"] }
+  );
+  ```
+
+## Adding Type Constraints 
+

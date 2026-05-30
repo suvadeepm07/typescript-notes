@@ -1,4 +1,4 @@
-# Chap 8 | Tuples and Enums
+# Chap 7 | Tuples and Enums
 
 **Q1**: What is a tuple in TypeScript ? 
 

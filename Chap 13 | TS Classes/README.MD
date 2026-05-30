@@ -418,4 +418,67 @@ private score = 0; // TypeScript-only protection
   }
   ```
 
+
+## Abstract Classes
+
+- `abstract` classes cannot be instantiated directly.
+
+  ```ts
+  abstract class Employee {
+    constructor(
+      public first: string,
+      public last: string
+    ) {}
+  }
   
+  const emp = new Employee("John", "Doe"); // error
+  ```
+
+- Abstract methods are methods that child classes **must implement**.
+
+  - Every class extending `Employee` must define `getPay()`.
+
+  ```ts
+  abstract class Employee {
+    constructor(
+      public first: string,
+      public last: string
+    ) {}
+  
+    abstract getPay(): number;
+  }
+  
+  class FullTimeEmployee extends Employee {
+    constructor(
+      first: string,
+      last: string,
+      private salary: number
+    ) {
+      super(first, last);
+    }
+  
+    getPay(): number {
+      return this.salary;
+    }
+  }
+  
+  class PartTimeEmployee extends Employee {
+    constructor(
+      first: string,
+      last: string,
+      private hourlyRate: number,
+      private hoursWorked: number
+    ) {
+      super(first, last);
+    }
+  
+    getPay(): number {
+      return this.hourlyRate * this.hoursWorked;
+    }
+  }
+  ```
+
+- Abstract Class vs Interface
+
+  - interface       = only describes required shape
+  - abstract class  = shared code + required methods
